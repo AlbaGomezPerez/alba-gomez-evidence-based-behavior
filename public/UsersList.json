@@ -1,0 +1,105 @@
+{
+    "users": [
+      {
+        "name": "Emma",
+        "hours": 7,
+        "places": [
+          "Barcelona",
+          "Paris",
+          "London"
+        ],
+        "id": 1
+      },
+      {
+        "name": "James",
+        "hours": 9,
+        "places":  [
+          "New York",
+          "Paris",
+          "London",
+          "Roma"
+        ],
+        "id": 2
+      },
+      {
+        "name": "Alex",
+        "hours": 6.5,
+        "places":   [
+          "New York",
+          "Paris",
+          "London",
+          "Roma",
+          "Moscow",
+          "Rio de Janeiro",
+          "Madrid"
+        ],
+        "id": 3
+      },
+      {
+        "name": "Anastasia",
+        "hours": 8,
+        "places":    [
+          "Paris",
+          "Moscow",
+          "Madrid"
+        ],
+        "id": 4
+      },
+      {
+        "name": "Ben",
+        "hours": 9.5,
+        "places":    [
+          "New York",
+          "Paris",
+          "London",
+          "Roma"
+        ],
+        "id": 5
+      },
+      {
+        "name": "Miguel",
+        "hours": 10,
+        "places":    [
+          "New York",
+          "Rio de Janeiro"
+        ],
+        "id": 6
+      },
+      {
+        "name": "Alicia",
+        "hours": 7.5,
+        "places":    [
+          "Rio de Janeiro",
+          "Madrid"
+        ],
+        "id": 7
+      },
+      {
+        "name": "Maria",
+        "hours": 6,
+        "places":    [
+          "London",
+          "Roma",
+          "Madrid"
+        ],
+        "id": 8
+      },
+      {
+        "name": "Francesco",
+        "hours": 8.5,
+        "places":    [
+          "London",
+          "Roma"
+        ],
+        "id": 9
+      },
+      {
+        "name": "Sofia",
+        "hours": 9,
+        "places":    [
+          "Roma"
+        ],
+        "id": 10
+      }
+    ]
+}
