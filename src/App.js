@@ -1,4 +1,7 @@
 import React from 'react';
+
+import UsersList from "./components/UsersList";
+
 import 'antd/dist/antd.css';
 import Chart from "react-google-charts";
 
@@ -43,6 +46,7 @@ class App extends React.Component {
 
 
     render () {
+        const {AllUsers} = this.state;
         return (
             <div className="container">
                 <nav>
@@ -95,28 +99,9 @@ class App extends React.Component {
         />
         </div>
                         </div>
-                            <table className="striped">
-                                <thead>
-                                    <tr>
-                                        <th>Name</th>
-                                        <th>Dream hours</th>
-                                        <th>Place</th>
-                                    </tr>
-                                </thead>
-                            <tbody>
-                            {this.state.AllUsers
-                                .map((item, index) => {
-                                    return (
-                                        <tr key={index}>
-                                        <td >{item.name}</td>
-                                        <td >{item.hours}</td>
-                                        <td >{item.places.map(place => <span className="chip">{place}</span>)}</td>
-                                        </tr>
-                                    );
-                                })}
-                            </tbody>
-                            </table>
                     </main>
+                <UsersList
+                    AllUsers={AllUsers}/>
                     <footer className="page-footer">
                                 <div className="container">
                                 <div className="row">
