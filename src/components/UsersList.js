@@ -2,10 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 /**
- * Render the HTML episodes list in list format
+ * Render the table with the users list and their data
  * @param props
- *  - AllEpisodes: list with all episodes
- *  - SearchEpisode: text value that the users writes into the input
+ *  - AllUsers: list with all users, visited cities and dream hours
  * @returns the HTML generated
  */
 const UsersList = props => {
