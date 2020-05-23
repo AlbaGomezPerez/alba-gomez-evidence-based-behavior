@@ -2,9 +2,9 @@ import React from 'react';
 
 import UsersList from "./components/UsersList";
 import HoursChart from "./components/HoursChart";
+import CitiesChart from "./components/CitiesChart";
 
 import 'antd/dist/antd.css';
-import Chart from "react-google-charts";
 import './App.css';
 import {GetCityStatistics, GetUsers} from "./services/UserService";
 
@@ -45,7 +45,7 @@ class App extends React.Component {
 
 
     render () {
-        const {AllUsers, HoursStatistics} = this.state;
+        const {AllUsers, HoursStatistics, CitiesStatistics} = this.state;
         return (
             <div className="container">
                 <nav>
@@ -57,28 +57,9 @@ class App extends React.Component {
                         <div className="App-graph">
                             <HoursChart
                                 HoursStatistics={HoursStatistics}/>
+                            <CitiesChart
+                                CitiesStatistics={CitiesStatistics}/>
 
-        <div style={{ display: 'flex', maxWidth: 600 }}>
-
-    <Chart
-        width={600}
-        height={300}
-        chartType="ColumnChart"
-        loader={<div>Loading Chart</div>}
-        data={this.state.CitiesStatistics}
-        options={{
-            title: 'Cities visited',
-                chartArea: { width: '30%' },
-            hAxis: {
-                minValue: 0,
-            },
-            vAxis: {
-                title: 'Cities',
-            },
-        }}
-        legendToggle
-        />
-        </div>
                         </div>
                     </main>
                 <UsersList

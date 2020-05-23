@@ -4,40 +4,40 @@ import PropTypes from 'prop-types';
 import Chart from "react-google-charts";
 
 /**
- * Render the chart with the users and dream hours
+ * Render the chart with the visited cities
  * @param props
- *  - HoursStatistics: list with all users and their corresponding dream hours
+ *  - CitiesChart: list with all cities
+ * @returns the HTML generated
  */
-const HoursChart = props => {
-    const {HoursStatistics} = props;
+const CitiesChart = props => {
+    const {CitiesStatistics} = props;
     return (
         <div style={{ display: 'flex', maxWidth: 600 }}>
-
             <Chart
                 width={600}
                 height={300}
                 chartType="ColumnChart"
                 loader={<div>Loading Chart</div>}
-                data={HoursStatistics}
+                data={CitiesStatistics}
                 options={{
-                    title: 'Dream hours',
+                    title: 'Cities visited',
                     chartArea: { width: '30%' },
                     hAxis: {
                         minValue: 0,
                     },
                     vAxis: {
-                        title: 'Hours',
+                        title: 'Cities',
                     },
                 }}
-
+                legendToggle
             />
         </div>
 
     );
 };
 
-HoursChart.propTypes = {
-    HoursStatistics: PropTypes.array,
+CitiesChart.propTypes = {
+    CitiesStatistics: PropTypes.array,
 };
 
-export default HoursChart;
+export default CitiesChart;

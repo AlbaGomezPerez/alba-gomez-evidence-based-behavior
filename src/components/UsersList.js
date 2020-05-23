@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
  * Render the table with the users list and their data
  * @param props
  *  - AllUsers: list with all users, visited cities and dream hours
- * @returns the HTML generated
  */
 const UsersList = props => {
     const {AllUsers} = props;
