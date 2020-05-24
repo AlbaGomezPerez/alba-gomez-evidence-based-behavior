@@ -2,6 +2,7 @@ const url = "UsersList.json";
 
 /**
  * Get list from the json
+ * @return a promise will return a json
  */
 export const GetUsers = () => {
     return fetch(url)

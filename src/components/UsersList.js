@@ -24,7 +24,7 @@ const UsersList = props => {
                         <tr key={index}>
                             <td >{item.name}</td>
                             <td >{item.hours}</td>
-                            <td >{item.places.map(place => <span className="chip">{place}</span>)}</td>
+                            <td >{item.places.map((place, cityIndex) => <span key={cityIndex} className="chip">{place}</span>)}</td>
                         </tr>
                     );
                 })}
