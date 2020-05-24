@@ -64,7 +64,7 @@ class App extends React.Component {
             <div className="container">
                 <nav>
                     <div className="nav-wrapper">
-                        <a href="#" className="brand-logo">Mi app</a>
+                        <a href="/" className="brand-logo">Mi app</a>
                     </div>
                 </nav>
                 <main className="">
