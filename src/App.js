@@ -1,9 +1,7 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import {Route, Switch} from 'react-router-dom';
 
 import Home from "./components/Home";
-
-
 
 import './App.css';
 import {GetCityStatistics, GetUsers} from "./services/UserService";
@@ -11,7 +9,12 @@ import HoursChart from "./components/HoursChart";
 import CitiesChart from "./components/CitiesChart";
 
 
-
+/**
+ * Render the main HTML (header and footer) and render Home component.
+ * CitiesChart and HoursChart components only are rendered to change route with the click
+ * @param props
+ *  - HoursStatistics: list with all users and their corresponding dream hours
+ */
 class App extends React.Component {
     constructor(props) {
         super(props);
@@ -19,14 +22,22 @@ class App extends React.Component {
         this.state = {
             AllUsers: [],
             HoursStatistics: [],
-            CitiesStatistics : []
+            CitiesStatistics: []
         }
     }
 
+    /**
+     * Render to refresh the page
+     */
     componentDidMount() {
         this.getUsersData();
     }
 
+    /**
+     * Second part of the fetch and save list of users in the state
+     * Add the list of dreams hours
+     * Add the list of visited cities
+     */
     getUsersData() {
         GetUsers()
             .then(data => {
@@ -40,14 +51,14 @@ class App extends React.Component {
                     HoursStatistics: hourStatistics
                 });
                 const citiesStatistics = GetCityStatistics(this.state.AllUsers);
-                this.setState( {
+                this.setState({
                     CitiesStatistics: citiesStatistics
                 });
             });
     }
 
 
-    render () {
+    render() {
         const {AllUsers, HoursStatistics, CitiesStatistics} = this.state;
         return (
             <div className="container">
@@ -56,62 +67,63 @@ class App extends React.Component {
                         <a href="#" className="brand-logo">Mi app</a>
                     </div>
                 </nav>
-                    <main className="">
-                        <Switch>
-                            <Route
-                                exact
-                                path="/"
-                                render={routerProps => (
-                                    <Home
-                                        AllUsers={AllUsers}
-                                        HoursStatistics={HoursStatistics}
-                                        CitiesStatistics={CitiesStatistics}/>
-                                )}
-                            />
-                            <Route
-                                path="/hours"
-                                render={routerProps => (
-                                    <HoursChart
+                <main className="">
+                    <Switch>
+                        <Route
+                            exact
+                            path="/"
+                            render={routerProps => (
+                                <Home
+                                    AllUsers={AllUsers}
+                                    HoursStatistics={HoursStatistics}
+                                    CitiesStatistics={CitiesStatistics}/>
+                            )}
+                        />
+                        <Route
+                            path="/hours"
+                            render={routerProps => (
+                                <HoursChart
                                     HoursStatistics={HoursStatistics}/>
-                                )}
-                            />
-                            <Route
-                                path="/cities"
-                                render={routerProps => (
-                                    <CitiesChart
-                                        CitiesStatistics={CitiesStatistics}/>
-                                )}
-                            />
+                            )}
+                        />
+                        <Route
+                            path="/cities"
+                            render={routerProps => (
+                                <CitiesChart
+                                    CitiesStatistics={CitiesStatistics}/>
+                            )}
+                        />
 
-                        </Switch>
-                    </main>
+                    </Switch>
+                </main>
 
 
-                    <footer className="page-footer">
-                                <div className="container">
-                                <div className="row">
-                                <div className="col l6 s12">
+                <footer className="page-footer">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col l6 s12">
                                 <h5 className="white-text">Footer Content</h5>
-        <p className="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
-        </div>
-        <div className="col l4 offset-l2 s12">
-            <h5 className="white-text">Links</h5>
-            <ul>
-            <li><a className="grey-text text-lighten-3" href="#!">Link 1</a></li>
-        <li><a className="grey-text text-lighten-3" href="#!">Link 2</a></li>
-        <li><a className="grey-text text-lighten-3" href="#!">Link 3</a></li>
-        <li><a className="grey-text text-lighten-3" href="#!">Link 4</a></li>
-        </ul>
-        </div>
-        </div>
-        </div>
-        <div className="footer-copyright">
-            <div className="container">
-            © 2014 Copyright Text
-        <a className="grey-text text-lighten-4 right" href="#!">More Links</a>
-        </div>
-        </div>
-                    </footer>
+                                <p className="grey-text text-lighten-4">You can use rows and columns here to organize
+                                    your footer content.</p>
+                            </div>
+                            <div className="col l4 offset-l2 s12">
+                                <h5 className="white-text">Links</h5>
+                                <ul>
+                                    <li><a className="grey-text text-lighten-3" href="#!">Link 1</a></li>
+                                    <li><a className="grey-text text-lighten-3" href="#!">Link 2</a></li>
+                                    <li><a className="grey-text text-lighten-3" href="#!">Link 3</a></li>
+                                    <li><a className="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="footer-copyright">
+                        <div className="container">
+                            © 2014 Copyright Text
+                            <a className="grey-text text-lighten-4 right" href="#!">More Links</a>
+                        </div>
+                    </div>
+                </footer>
             </div>
         )
     };

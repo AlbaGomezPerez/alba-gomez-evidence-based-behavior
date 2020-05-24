@@ -17,7 +17,7 @@ const UsersList = props => {
                 <th>Place</th>
             </tr>
             </thead>
-            <tbody>
+            <tbody >
             {AllUsers
                 .map((item, index) => {
                     return (
