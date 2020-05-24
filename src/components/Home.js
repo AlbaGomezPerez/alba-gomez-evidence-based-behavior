@@ -18,12 +18,14 @@ const Home = props => {
     return (
         <div>
             <div className="App-graph">
-                <Link to="hours">
+                <div>
                     <HoursChart
                         HoursStatistics={HoursStatistics}/>
-                </Link>
-                <CitiesChart
-                    CitiesStatistics={CitiesStatistics}/>
+                </div>
+                <div>
+                    <CitiesChart
+                        CitiesStatistics={CitiesStatistics}/>
+                </div>
             </div>
             <UsersList
                 AllUsers={AllUsers}/>

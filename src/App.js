@@ -8,6 +8,7 @@ import Home from "./components/Home";
 import './App.css';
 import {GetCityStatistics, GetUsers} from "./services/UserService";
 import HoursChart from "./components/HoursChart";
+import CitiesChart from "./components/CitiesChart";
 
 
 
@@ -72,6 +73,13 @@ class App extends React.Component {
                                 render={routerProps => (
                                     <HoursChart
                                     HoursStatistics={HoursStatistics}/>
+                                )}
+                            />
+                            <Route
+                                path="/cities"
+                                render={routerProps => (
+                                    <CitiesChart
+                                        CitiesStatistics={CitiesStatistics}/>
                                 )}
                             />
 

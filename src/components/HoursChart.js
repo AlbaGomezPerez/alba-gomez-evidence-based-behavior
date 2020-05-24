@@ -34,7 +34,7 @@ const HoursChart = props => {
                     data={HoursStatistics}
                     options={{
                         title: 'Dream hours',
-                        chartArea: { width: '65%' },
+                        chartArea: { width: '45%' },
                         hAxis: {
                             minValue: 0,
                         },
@@ -44,6 +44,12 @@ const HoursChart = props => {
                     }}
                 />
 
+            </div>
+            <div>
+                {location.pathname === '/' ?
+                    <Link to="hours" className="More">
+                        <i className="material-icons">info</i>More info
+                    </Link> : null}
             </div>
             <div>
                 {location.pathname === '/hours' ?
