@@ -1,3 +1,17 @@
+## Introduction
+This project is about a web page which manage data related with users, 
+their dream hours and visited cities.
+## Project
+The web page, created in React, has been built with different components: 
+ * App: it's the main part and render all of the rest components
+ * Home: This component render the main part of application.
+ * CitiesChart and HoursChart: render the charts with the info
+ * UsersList: render the list with all users data
+## React tools
+* HTML
+* Styles: Apart from CSS, materialize library has been used
+* React-router: it's a useful tool to render components with different paths.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
