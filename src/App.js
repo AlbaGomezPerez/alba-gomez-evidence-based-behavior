@@ -1,12 +1,14 @@
 import React from 'react';
+import { Route, Switch } from 'react-router-dom';
 
-import UsersList from "./components/UsersList";
-import HoursChart from "./components/HoursChart";
-import CitiesChart from "./components/CitiesChart";
+import Home from "./components/Home";
 
-import 'antd/dist/antd.css';
+
+
 import './App.css';
 import {GetCityStatistics, GetUsers} from "./services/UserService";
+import HoursChart from "./components/HoursChart";
+
 
 
 class App extends React.Component {
@@ -54,16 +56,29 @@ class App extends React.Component {
                     </div>
                 </nav>
                     <main className="">
-                        <div className="App-graph">
-                            <HoursChart
-                                HoursStatistics={HoursStatistics}/>
-                            <CitiesChart
-                                CitiesStatistics={CitiesStatistics}/>
+                        <Switch>
+                            <Route
+                                exact
+                                path="/"
+                                render={routerProps => (
+                                    <Home
+                                        AllUsers={AllUsers}
+                                        HoursStatistics={HoursStatistics}
+                                        CitiesStatistics={CitiesStatistics}/>
+                                )}
+                            />
+                            <Route
+                                path="/hours"
+                                render={routerProps => (
+                                    <HoursChart
+                                    HoursStatistics={HoursStatistics}/>
+                                )}
+                            />
 
-                        </div>
+                        </Switch>
                     </main>
-                <UsersList
-                    AllUsers={AllUsers}/>
+
+
                     <footer className="page-footer">
                                 <div className="container">
                                 <div className="row">
